@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://clvcdx5vu1arc"
 path.s3tc="res://.godot/imported/warden_warden_color_1.png-41fe5f2cde1d6fca86317319bf38a689.s3tc.ctex"
+path.etc2="res://.godot/imported/warden_warden_color_1.png-41fe5f2cde1d6fca86317319bf38a689.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://fighters/monsters/dream_warden/_res/model/assets/warden_warden_color_1.png"
-dest_files=["res://.godot/imported/warden_warden_color_1.png-41fe5f2cde1d6fca86317319bf38a689.s3tc.ctex"]
+dest_files=["res://.godot/imported/warden_warden_color_1.png-41fe5f2cde1d6fca86317319bf38a689.s3tc.ctex", "res://.godot/imported/warden_warden_color_1.png-41fe5f2cde1d6fca86317319bf38a689.etc2.ctex"]
 
 [params]
 

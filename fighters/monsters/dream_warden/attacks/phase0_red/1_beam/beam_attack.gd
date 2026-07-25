@@ -24,5 +24,6 @@ func _on_timer_timeout() -> void:
 	var bullet2 = preload("uid://ds6qyt7d0yshl").instantiate()
 	bullet2.start_pos = rand_start_pos.pick_random()
 	bullet2.end_pos = end_pos.pick_random()
+	bullet2.sound_enabled = false
 	$Cage.add_child(bullet2)
 	

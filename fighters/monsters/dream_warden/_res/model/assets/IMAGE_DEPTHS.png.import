@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhqfkyyjdhfip"
 path.s3tc="res://.godot/imported/IMAGE_DEPTHS.png-ed46e7b2e3b70edbc9e3c5dd08ee2fca.s3tc.ctex"
+path.etc2="res://.godot/imported/IMAGE_DEPTHS.png-ed46e7b2e3b70edbc9e3c5dd08ee2fca.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://fighters/monsters/dream_warden/_res/model/assets/IMAGE_DEPTHS.png"
-dest_files=["res://.godot/imported/IMAGE_DEPTHS.png-ed46e7b2e3b70edbc9e3c5dd08ee2fca.s3tc.ctex"]
+dest_files=["res://.godot/imported/IMAGE_DEPTHS.png-ed46e7b2e3b70edbc9e3c5dd08ee2fca.s3tc.ctex", "res://.godot/imported/IMAGE_DEPTHS.png-ed46e7b2e3b70edbc9e3c5dd08ee2fca.etc2.ctex"]
 
 [params]
 

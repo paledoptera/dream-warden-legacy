@@ -7,8 +7,11 @@ var end_pos : Node2D
 @export var marker: Marker2D
 @export var collision_shape: CollisionShape2D
 
+var sound_enabled = true
 func _ready() -> void:
 	$AnimationPlayer.play("blast")
+	if not sound_enabled:
+		$AudioStreamPlayer.volume_linear = 0.0
 
 func _process(delta: float) -> void:
 	global_position = Vector2.ZERO

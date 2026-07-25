@@ -63,6 +63,10 @@ folder_colors={
 "res://fighters/monsters/dream_warden/attacks/phase0_red/4_bright_hell/_res/": "gray"
 }
 
+[global_group]
+
+aqua_circle=""
+
 [gui]
 
 theme/custom="uid://tefd5wwqiati"
@@ -190,5 +194,7 @@ toggle_fullscreen={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
 anti_aliasing/screen_space_roughness_limiter/enabled=false
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

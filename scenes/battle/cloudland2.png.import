@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://chmiryi84x8l3"
 path.s3tc="res://.godot/imported/cloudland2.png-1919e9b4aed09a3c40a3b2ce495430ff.s3tc.ctex"
+path.etc2="res://.godot/imported/cloudland2.png-1919e9b4aed09a3c40a3b2ce495430ff.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/battle/cloudland2.png"
-dest_files=["res://.godot/imported/cloudland2.png-1919e9b4aed09a3c40a3b2ce495430ff.s3tc.ctex"]
+dest_files=["res://.godot/imported/cloudland2.png-1919e9b4aed09a3c40a3b2ce495430ff.s3tc.ctex", "res://.godot/imported/cloudland2.png-1919e9b4aed09a3c40a3b2ce495430ff.etc2.ctex"]
 
 [params]
 

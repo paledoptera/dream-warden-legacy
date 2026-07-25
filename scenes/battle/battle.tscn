@@ -2,16 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cosoh16n65vwr" path="res://scenes/battle/battle.gd" id="1_0yh6x"]
 [ext_resource type="PackedScene" uid="uid://dh7u53yj0xavd" path="res://ui/battle/bottom_panel/bottom_panel.tscn" id="1_7gynk"]
-[ext_resource type="Texture2D" uid="uid://bwoj3auyp6174" path="res://scenes/battle/background.png" id="2_icoan"]
+[ext_resource type="Texture2D" uid="uid://cakikivpcoa8g" path="res://scenes/battle/background seamless.png" id="2_t1kk3"]
 [ext_resource type="PackedScene" uid="uid://b3uxp6uapsy5m" path="res://ui/battle/soul_cage/soul_cage.tscn" id="2_xd4uy"]
 [ext_resource type="PackedScene" uid="uid://daa26yfs5qdsb" path="res://soul/soul.tscn" id="3_0yh6x"]
 [ext_resource type="PackedScene" uid="uid://b56rv68xwgvla" path="res://fighters/characters/susie/susie.tscn" id="3_fh7rg"]
 [ext_resource type="Texture2D" uid="uid://cgopnlivpbvru" path="res://scenes/battle/back_buldings_032021.png" id="3_kd6yx"]
 [ext_resource type="PackedScene" uid="uid://dgdn5haymn4gc" path="res://effects/depths/depths_bkg.tscn" id="4_mxe8n"]
+[ext_resource type="Texture2D" uid="uid://ctgnbwjskg6n8" path="res://scenes/battle/background seamless test2.png" id="4_n6gaa"]
 [ext_resource type="PackedScene" uid="uid://siv76bpw5pri" path="res://ui/battle/tp_bar/tp_bar.tscn" id="5_h0kxc"]
 [ext_resource type="PackedScene" uid="uid://btwju6msq5h0t" path="res://scenes/battle/fire_rising.tscn" id="5_t1kk3"]
 [ext_resource type="PackedScene" uid="uid://bt53ruak41iac" path="res://fighters/monsters/dream_warden/dream_warden.tscn" id="6_agsc7"]
-[ext_resource type="PackedScene" uid="uid://cb578rc4cw4ea" path="res://specialattacks/aqua_hud.tscn" id="10_t1kk3"]
+[ext_resource type="PackedScene" uid="uid://cb578rc4cw4ea" path="res://specialattacks/aqua/aqua_hud.tscn" id="10_t1kk3"]
 [ext_resource type="Script" uid="uid://m17i7j602jax" path="res://ui/text_box/components/dialogue/dialogue.gd" id="12_icoan"]
 [ext_resource type="PackedScene" uid="uid://ch6nqfnn4lcxk" path="res://scenes/battle/clock.tscn" id="12_mxe8n"]
 [ext_resource type="Script" uid="uid://cci227fj67d4u" path="res://ui/text_box/components/dialogue/_dialogue_marker.gd" id="13_kd6yx"]
@@ -109,10 +110,23 @@ shader_parameter/noise_scale = 1.0
 shader_parameter/swirl_strength = 0.1000000997499999
 shader_parameter/hue_shift_speed = 0.658000031255
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_t1kk3"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t1kk3"]
+shader = SubResource("Shader_agsc7")
+shader_parameter/time_factor = 5.0
+shader_parameter/wave_strength = 0.0010000000475
+shader_parameter/ripple_speed = 0.6210000294975
+shader_parameter/base_color = Color(1, 1, 1, 0.52156866)
+shader_parameter/edge_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/glow_intensity = 0.330000015675
+shader_parameter/edge_pulse = 0.318000015105
+shader_parameter/noise_scale = 1.0
+shader_parameter/swirl_strength = 0.1000000997499999
+shader_parameter/hue_shift_speed = 0.658000031255
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_n6gaa"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6ofp8"]
 viewport_path = NodePath("SubViewport2")
 
 [sub_resource type="Animation" id="Animation_agsc7"]
@@ -230,35 +244,6 @@ handle_input_locally = false
 size = Vector2i(320, 480)
 render_target_update_mode = 4
 
-[node name="Sky" type="TextureRect" parent="Background/SubViewport" unique_id=203411286]
-material = SubResource("ShaderMaterial_oiw7q")
-custom_maximum_size = Vector2(320, 240)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 221.8125
-offset_bottom = -18.1875
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_icoan")
-expand_mode = 1
-
-[node name="Sky2" type="TextureRect" parent="Background/SubViewport" unique_id=269316077]
-material = SubResource("ShaderMaterial_oiw7q")
-custom_maximum_size = Vector2(320, 240)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_top = -18.5
-offset_right = -0.5
-offset_bottom = -258.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_icoan")
-expand_mode = 1
-flip_v = true
-
 [node name="Buildings" type="TextureRect" parent="Background/SubViewport" unique_id=1842574344]
 material = SubResource("ShaderMaterial_oiw7q")
 custom_maximum_size = Vector2(320, 240)
@@ -272,6 +257,40 @@ grow_vertical = 2
 texture = ExtResource("3_kd6yx")
 expand_mode = 1
 
+[node name="Parallax2D" type="Parallax2D" parent="Background/SubViewport" unique_id=2090999377]
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 3
+
+[node name="Sky" type="TextureRect" parent="Background/SubViewport/Parallax2D" unique_id=203411286]
+material = SubResource("ShaderMaterial_t1kk3")
+custom_minimum_size = Vector2(640, 360)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 145.0
+offset_right = 640.0
+offset_bottom = 505.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t1kk3")
+expand_mode = 1
+
+[node name="Sky2" type="TextureRect" parent="Background/SubViewport/Parallax2D" unique_id=429545759]
+visible = false
+material = SubResource("ShaderMaterial_t1kk3")
+custom_minimum_size = Vector2(640, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 187.5
+offset_right = 640.0
+offset_bottom = 387.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_n6gaa")
+expand_mode = 1
+
 [node name="DepthsBkg" parent="." unique_id=27529299 instance=ExtResource("4_mxe8n")]
 visible = false
 modulate = Color(1, 1, 1, 0.259)
@@ -280,25 +299,25 @@ position = Vector2(308, 171)
 [node name="Clock" parent="." unique_id=913049443 instance=ExtResource("12_mxe8n")]
 
 [node name="MainClock" parent="Clock/SubViewport2" parent_id_path=PackedInt32Array(913049443, 698166261) index="1" unique_id=1788779321]
-texture = SubResource("ViewportTexture_t1kk3")
+texture = SubResource("ViewportTexture_n6gaa")
 
 [node name="Afterimage1" parent="Clock/SubViewport2/MainClock" index="0" unique_id=394784902]
-texture = SubResource("ViewportTexture_t1kk3")
+texture = SubResource("ViewportTexture_n6gaa")
 
 [node name="Afterimage2" parent="Clock/SubViewport2/MainClock" index="1" unique_id=729563524]
-texture = SubResource("ViewportTexture_t1kk3")
+texture = SubResource("ViewportTexture_n6gaa")
 
 [node name="Afterimage3" parent="Clock/SubViewport2/MainClock" index="2" unique_id=1218521683]
-texture = SubResource("ViewportTexture_t1kk3")
+texture = SubResource("ViewportTexture_n6gaa")
 
 [node name="Afterimage4" parent="Clock/SubViewport2/MainClock" index="3" unique_id=579023528]
-texture = SubResource("ViewportTexture_t1kk3")
+texture = SubResource("ViewportTexture_n6gaa")
 
 [node name="Afterimage5" parent="Clock/SubViewport2/MainClock" index="4" unique_id=322422116]
-texture = SubResource("ViewportTexture_t1kk3")
+texture = SubResource("ViewportTexture_n6gaa")
 
 [node name="TextureRect" parent="Clock" index="3" unique_id=399944368]
-texture = SubResource("ViewportTexture_n6gaa")
+texture = SubResource("ViewportTexture_6ofp8")
 
 [node name="3DWorld" type="SubViewportContainer" parent="." unique_id=343720224]
 z_index = 12
